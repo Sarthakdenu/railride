@@ -5,6 +5,7 @@ exports.creattraininfo = async(req,res) =>
    try
    {
       const {name,trainid,platform, type} = req.body;
+      console.log("hellp from create train controller")
       const newtrain = new Train(
         {
             name : name,
@@ -13,6 +14,7 @@ exports.creattraininfo = async(req,res) =>
             type :type
         }
       )
+      console.log(newtrain)
       const savetraininfo = await newtrain.save();
       res.json(
         {
